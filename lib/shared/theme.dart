@@ -19,4 +19,4 @@ TextStyle greyTextFont = GoogleFonts.raleway()
 TextStyle whiteNumberTextFont = GoogleFonts.raleway()
     .copyWith(color: Colors.white, fontWeight: FontWeight.w500);
 TextStyle yellowNumberTextFont =
-    GoogleFonts.raleway().copyWith(color: accentColor1);
+    GoogleFonts.raleway().copyWith(color: accentColor2);
