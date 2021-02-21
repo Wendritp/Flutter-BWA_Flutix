@@ -26,6 +26,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
             name: event.name,
             profilePicture: event.profileImage,
           );
+      await UserServices.updateUser(updatedUser);
       yield UserLoaded(updatedUser);
     }
   }
