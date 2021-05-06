@@ -4,8 +4,15 @@ class RatingStars extends StatelessWidget {
   final double voteAverage;
   final double starSize;
   final double fontSize;
+  final Color color;
+  final MainAxisAlignment alignment;
 
-  RatingStars({this.voteAverage = 0, this.starSize = 20, this.fontSize = 12});
+  RatingStars(
+      {this.voteAverage = 0,
+      this.starSize = 20,
+      this.fontSize = 12,
+      this.color,
+      this.alignment = MainAxisAlignment.start});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +30,12 @@ class RatingStars extends StatelessWidget {
       width: 3,
     ));
     widgets.add(Text("$voteAverage/10",
-        style: whiteNumberTextFont.copyWith(
-            fontWeight: FontWeight.w300, fontSize: fontSize)));
+        style: whiteNumberFont.copyWith(
+            color: color ?? Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: fontSize)));
     return Row(
+      mainAxisAlignment: alignment,
       children: widgets,
     );
   }
