@@ -20,7 +20,9 @@ class PageBloc extends Bloc<PageEvent, PageState> {
     } else if (event is GoToLoginPage) {
       yield OnLoginPage();
     } else if (event is GoToMainPage) {
-      yield OnMainPage();
+      yield OnMainPage(
+          bottomNavBarIndex: event.bottomNavBarIndex,
+          isExpired: event.isExpired);
     } else if (event is GoToRegistrationPage) {
       yield OnRegistrationPage(event.registrationData);
     } else if (event is GoToPreferencePage) {
@@ -37,6 +39,16 @@ class PageBloc extends Bloc<PageEvent, PageState> {
       yield OnCheckoutPage(event.ticket);
     } else if (event is GoToSuccessPage) {
       yield OnSuccessPage(event.ticket, event.transaction);
+    } else if (event is GoToTicketDetailPage) {
+      yield OnTicketDetailPage(event.ticket);
+    } else if (event is GoToProfilePage) {
+      yield OnProfilePage();
+    } else if (event is GoToEditProfilePage) {
+      yield OnEditProfilePage(event.user);
+    } else if (event is GoToTopUpPage) {
+      yield OnTopUpPage(event.pageEvent);
+    } else if (event is GoToWalletPage) {
+      yield OnWalletPage(event.pageEvent);
     }
   }
 }

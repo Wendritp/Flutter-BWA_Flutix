@@ -407,7 +407,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                                   .copywith(totalPrice: total),
                                               transaction));
                                     } else {
-                                      //Uang Gk CUkup
+                                      context
+                                          .bloc<PageBloc>()
+                                          .add(GoToTopUpPage(GoToMainPage()));
                                     }
                                   }),
                             ),

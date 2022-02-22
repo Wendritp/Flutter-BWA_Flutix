@@ -15,8 +15,13 @@ class GoToLoginPage extends PageEvent {
 }
 
 class GoToMainPage extends PageEvent {
+  final int bottomNavBarIndex;
+  final bool isExpired;
+
+  GoToMainPage({this.bottomNavBarIndex = 0, this.isExpired = false});
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [bottomNavBarIndex, isExpired];
 }
 
 class GoToRegistrationPage extends PageEvent {
@@ -85,4 +90,43 @@ class GoToSuccessPage extends PageEvent {
 
   @override
   List<Object> get props => [ticket, transaction];
+}
+
+class GoToTicketDetailPage extends PageEvent {
+  final Ticket ticket;
+
+  GoToTicketDetailPage(this.ticket);
+  @override
+  List<Object> get props => [ticket];
+}
+
+class GoToProfilePage extends PageEvent {
+  @override
+  List<Object> get props => [];
+}
+
+class GoToEditProfilePage extends PageEvent {
+  final User user;
+
+  GoToEditProfilePage(this.user);
+
+  @override
+  List<Object> get props => [user];
+}
+
+class GoToTopUpPage extends PageEvent {
+  final PageEvent pageEvent;
+
+  GoToTopUpPage(this.pageEvent);
+
+  @override
+  List<Object> get props => [pageEvent];
+}
+
+class GoToWalletPage extends PageEvent {
+  final PageEvent pageEvent;
+
+  GoToWalletPage(this.pageEvent);
+  @override
+  List<Object> get props => [PageEvent];
 }

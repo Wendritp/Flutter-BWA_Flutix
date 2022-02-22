@@ -7,14 +7,21 @@ class ComingSoonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 140,
-      width: 100,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          image: DecorationImage(
-              image: NetworkImage(imageBaseURL + "w780" + movie.posterPath),
-              fit: BoxFit.cover)),
+    return GestureDetector(
+      onTap: () {
+        if (onTap != null) {
+          onTap();
+        }
+      },
+      child: Container(
+        height: 140,
+        width: 100,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(
+                image: NetworkImage(imageBaseURL + "w500" + movie.posterPath),
+                fit: BoxFit.cover)),
+      ),
     );
   }
 }

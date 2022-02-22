@@ -40,7 +40,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           print(e);
         }
       }
-    } else if (event is TopUp) {
+    } else if (event is Purchase) {
       if (state is UserLoaded) {
         try {
           User updatecUser = (state as UserLoaded).user.copyWith(

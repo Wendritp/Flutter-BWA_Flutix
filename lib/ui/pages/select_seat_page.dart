@@ -100,6 +100,84 @@ class _SelectSeatPageState extends State<SelectSeatPage> {
 
                     //note : SEATS
                     generateSeats(),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // * Available
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              margin: EdgeInsets.only(right: 8),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xFFE4E4E4)),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                            Text(
+                              'Available',
+                              style: greyTextFont.copyWith(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 20),
+                        // * Booked
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              margin: EdgeInsets.only(right: 8),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF6F6F6),
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                            Text(
+                              'Booked',
+                              style: greyTextFont.copyWith(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(width: 20),
+                        // * Selected
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              margin: EdgeInsets.only(right: 8),
+                              decoration: BoxDecoration(
+                                color: accentColor2,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                            Text(
+                              'Selected',
+                              style: greyTextFont.copyWith(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     //note : NEXT BUTTON
                     SizedBox(height: 30),
                     Align(
